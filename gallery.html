@@ -1,0 +1,102 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brews & Beans</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="background-video">
+    <video autoplay muted loop id="background-video">
+      <source src="Cups.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>   
+
+  <header class="navbar">
+    <nav>
+    <h1>☕ Brews & Beans</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul> 
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+      </ul> 
+      <ul>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul> 
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <ul>
+        <li><a href="subscribe.html">Subscribe</a></li>
+      </ul>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="gallery">
+    <h2 class="gallery-title">💝Coffee Moments</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="Coffe.jpg" alt="Coffee Cup" />
+        <img src="Cozy.jpg" alt="Cozy Interior" />
+        <img src="Pastry.jpg" alt="Pastries" />
+        <img src="Barista.jpg" alt="Barista at work" />
+        <img src="People.jpg" alt="Solid" />
+        <img src="Table.jpg" alt="Sarap" />  
+        <img src="Lady.jpg" alt="Barista at work" />
+        <img src="Women.jpg" alt="Solid" />
+        <img src="Group.jpg" alt="Sarap" /> 
+        <img src="Shop.jpg" alt="Barista at work" />
+        <img src="Yummy.jpg" alt="Solid" />
+        <img src="Grey.jpg" alt="Sarap" /> 
+        <img src="Coffe1.jpg" alt="Barista at work" />
+        <img src="coffe2.jpg" alt="Solid" />
+        <img src="coffe3.jpg" alt="Sarap" /> 
+        <img src="coffe4.jpg" alt="Barista at work" />
+        <img src="coffe5.jpg" alt="Solid" />
+        <img src="coffe6.jpg" alt="Sarap" />         
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+
+  <script>
+const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+let idx = 0;
+
+// Remove the interval for auto sliding
+// No need for setInterval anymore
+
+// Next button functionality
+document.querySelector('.next').onclick = () => {
+  idx = (idx + 1) % images.length;
+  slides.style.transform = `translateX(-${idx * 100}%)`;
+};
+
+// Previous button functionality
+document.querySelector('.prev').onclick = () => {
+  idx = (idx - 1 + images.length) % images.length;
+  slides.style.transform = `translateX(-${idx * 100}%)`;
+};
+
+// Optionally, you can still have hover event listeners, but they will now do nothing
+document.querySelector('.slider').addEventListener('mouseenter', () => {
+  // No action on hover anymore
+});
+
+document.querySelector('.slider').addEventListener('mouseleave', () => {
+  // No action on hover anymore
+});
+</script>
+
+
+</body>
+</html>
